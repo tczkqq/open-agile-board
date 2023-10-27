@@ -1,16 +1,32 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
 
+import { AddCardComponent } from '@components/cards/add-card/add-card.component';
+import { SettingsComponent } from '@components/settings/settings.component';
+import { LoadingComponent } from '@components/ui/loading/loading.component';
+import { BoardComponent } from '@components/boards/board/board.component';
+import { NoDataComponent } from '@components/ui/no-data/no-data.component';
+import { NavbarComponent } from '@components/ui/navbar/navbar.component';
+import { ListComponent } from '@components/lists/list/list.component';
+import { CardComponent } from '@components/cards/card/card.component';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
-    BrowserModule
+    RouterModule.forRoot([]),
+    BrowserModule,
+    BoardComponent,
+    ListComponent,
+    CardComponent,
+    NavbarComponent,
+    SettingsComponent,
+    AddCardComponent,
+    LoadingComponent,
+    NoDataComponent,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

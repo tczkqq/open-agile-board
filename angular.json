@@ -30,7 +30,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "src/dark-theme.scss",
+                "bundleName": "dark-theme",
+                "inject": false
+              },
+              {
+                "input": "src/light-theme.scss",
+                "bundleName": "light-theme",
+                "inject": false
+              }
             ],
             "scripts": []
           },
@@ -97,8 +107,23 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "8a188c90-b34d-4d38-87b7-7742970a4cf1",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

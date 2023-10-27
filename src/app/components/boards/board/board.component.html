@@ -1,0 +1,14 @@
+<section *ngIf="board" class="board">
+  <h1>{{ board.title }}</h1>
+  <p>{{ board.description }}</p>
+
+  <div class="lists">
+    <app-list
+      class="list"
+      *ngFor="let list of board.lists"
+      [list]="list"
+    />
+  </div>
+
+  <app-no-data *ngIf="!board.lists" />
+</section>

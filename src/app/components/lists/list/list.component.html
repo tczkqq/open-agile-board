@@ -1,0 +1,10 @@
+<p-orderList
+  [value]="list.tasks"
+  [header]="list.title"
+  [dragdrop]="true"
+  [listStyle]="{ height: '100%' }"
+>
+  <ng-template let-task pTemplate="item">
+    <app-card [card]="task" />
+  </ng-template>
+</p-orderList>
