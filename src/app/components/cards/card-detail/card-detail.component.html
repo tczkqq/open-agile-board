@@ -1,1 +1,17 @@
-<p>card-detail works!</p>
+<div class="card-detail">
+  <h1>{{ card.title }}</h1>
+  <p>Added: {{ card.dateAdded }}</p>
+  <p>Updated: {{ card.dateUpdated }}</p>
+  <p class="tags">
+    <p-chip
+      *ngFor="let tag of card.tags"
+      [label]="tag.name"
+      [style]="{ color: tag.color }"
+    />
+  </p>
+  <p>{{ card.description }}</p>
+  <p class="action-butons">
+    <p-button label="Edit" severity="warning" (onClick)="onEditClick()" />
+    <p-button label="Delete" severity="danger" (onClick)="onDeleteClick()" />
+  </p>
+</div>

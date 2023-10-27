@@ -1,0 +1,13 @@
+.card-detail {
+
+    .tags {
+        display: flex;
+        gap: 1em;
+    }
+    
+    .action-butons {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+    }
+}

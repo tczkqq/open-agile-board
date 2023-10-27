@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit {
       items: [],
     },
     {
-      label: 'Boards',
+      label: 'Board',
       icon: PrimeIcons.BOOK,
       items: [
         { label: 'New', icon: PrimeIcons.PLUS, disabled: true },
@@ -39,15 +39,19 @@ export class NavbarComponent implements OnInit {
     },
     {
       label: 'Cards',
-      icon: PrimeIcons.COMMENT,
-      items: [{ label: 'New Card', icon: PrimeIcons.PLUS, disabled: true }],
+      icon: PrimeIcons.COMMENTS,
+      items: [{ label: 'New', icon: PrimeIcons.PLUS, disabled: true }],
     },
     {
       label: 'Lists',
       icon: PrimeIcons.LIST,
-      items: [{ label: 'New List', icon: PrimeIcons.PLUS, disabled: true }],
+      items: [{ label: 'New', icon: PrimeIcons.PLUS, disabled: true }],
     },
-
+    {
+      label: 'Tags',
+      icon: PrimeIcons.TAGS,
+      items: [{ label: 'New', icon: PrimeIcons.PLUS, disabled: true }],
+    },
     {
       label: 'Data',
       icon: PrimeIcons.DATABASE,
