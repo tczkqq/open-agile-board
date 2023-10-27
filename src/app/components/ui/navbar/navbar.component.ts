@@ -53,14 +53,8 @@ export class NavbarComponent implements OnInit {
       icon: PrimeIcons.CALENDAR,
       items: [
         {
-          label: 'New',
-          icon: PrimeIcons.PLUS,
-          command: () =>
-            this.openDialog(AddEditBoardComponent, { header: 'Add Board' }),
-        },
-        {
-          label: 'Edit',
-          icon: PrimeIcons.FILE_EDIT,
+          label: 'Settings',
+          icon: PrimeIcons.WRENCH,
           command: () =>
             this.openDialog(AddEditBoardComponent, { header: 'Edit Board' }),
         },
