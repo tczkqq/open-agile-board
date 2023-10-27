@@ -1,1 +1,5 @@
-<p-menubar [model]="menuItems" expanded="false" />
+<p-menubar [model]="menuItems" expanded="false">
+  <ng-template pTemplate="end">
+    <app-search-bar />
+  </ng-template>
+</p-menubar>

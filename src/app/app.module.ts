@@ -8,6 +8,7 @@ import { AddEditListComponent } from '@components/lists/add-edit-list/add-edit-l
 import { AddEditTagComponent } from '@components/tags/add-edit-tag/add-edit-tag.component';
 import { CardDetailComponent } from '@components/cards/card-detail/card-detail.component';
 import { BrowseTagsComponent } from '@components/tags/browse-tags/browse-tags.component';
+import { SearchBarComponent } from '@components/ui/search-bar/search-bar.component';
 import { SettingsComponent } from '@components/settings/settings.component';
 import { LoadingComponent } from '@components/ui/loading/loading.component';
 import { NoDataComponent } from '@components/ui/no-data/no-data.component';
@@ -27,6 +28,7 @@ import { AppComponent } from './app.component';
     AddEditTagComponent,
     BrowseTagsComponent,
     CardDetailComponent,
+    SearchBarComponent,
     SettingsComponent,
     LoadingComponent,
     NoDataComponent,

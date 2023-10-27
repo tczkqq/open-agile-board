@@ -3,26 +3,34 @@ import { Component, OnInit, Type } from '@angular/core';
 
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { InputTextModule } from 'primeng/inputtext';
 import { MenuItem, PrimeIcons } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
 
 import { map, tap } from 'rxjs/operators';
 
+import { AddEditBoardComponent } from '@components/boards/add-edit-board/add-edit-board.component';
+import { AddEditCardComponent } from '@components/cards/add-edit-card/add-edit-card.component';
+import { AddEditListComponent } from '@components/lists/add-edit-list/add-edit-list.component';
+import { AddEditTagComponent } from '@components/tags/add-edit-tag/add-edit-tag.component';
+import { BrowseTagsComponent } from '@components/tags/browse-tags/browse-tags.component';
+import { SearchBarComponent } from '@components/ui/search-bar/search-bar.component';
 import { SettingsComponent } from '@components/settings/settings.component';
 import { AboutComponent } from '@components/about/about.component';
 import { BoardMngmtService } from '@services/board-mngmt.service';
-import { AddEditBoardComponent } from '@components/boards/add-edit-board/add-edit-board.component';
-import { AddEditTagComponent } from '@components/tags/add-edit-tag/add-edit-tag.component';
-import { BrowseTagsComponent } from '@components/tags/browse-tags/browse-tags.component';
-import { AddEditCardComponent } from '@components/cards/add-edit-card/add-edit-card.component';
-import { AddEditListComponent } from '@components/lists/add-edit-list/add-edit-list.component';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
   standalone: true,
-  imports: [MenubarModule, DynamicDialogModule, BrowserAnimationsModule],
+  imports: [
+    BrowserAnimationsModule,
+    DynamicDialogModule,
+    SearchBarComponent,
+    InputTextModule,
+    MenubarModule,
+  ],
   providers: [DialogService],
 })
 export class NavbarComponent implements OnInit {
@@ -38,8 +46,16 @@ export class NavbarComponent implements OnInit {
       label: 'Board',
       icon: PrimeIcons.CALENDAR,
       items: [
-        { label: 'New', icon: PrimeIcons.PLUS, disabled: true },
-        { label: 'Edit', icon: PrimeIcons.FILE_EDIT, disabled: true },
+        {
+          label: 'New',
+          icon: PrimeIcons.PLUS,
+          command: () => this.openDialog(AddEditBoardComponent, 'Add Board'),
+        },
+        {
+          label: 'Edit',
+          icon: PrimeIcons.FILE_EDIT,
+          command: () => this.openDialog(AddEditBoardComponent, 'Edit Board'),
+        },
       ],
     },
     {
@@ -93,7 +109,17 @@ export class NavbarComponent implements OnInit {
             { label: 'Export', icon: PrimeIcons.DOWNLOAD },
           ],
         },
+        {
+          label: 'Generate chart',
+          icon: PrimeIcons.CHART_PIE,
+          disabled: true,
+        },
       ],
+    },
+    {
+      label: 'Tools',
+      icon: PrimeIcons.WRENCH,
+      disabled: true,
     },
     {
       label: 'Settings',
@@ -104,6 +130,15 @@ export class NavbarComponent implements OnInit {
       label: 'About',
       icon: PrimeIcons.INFO_CIRCLE,
       command: () => this.openDialog(AboutComponent, 'About'),
+    },
+    {
+      label: 'Account',
+      icon: PrimeIcons.USER,
+      items: [
+        { label: 'Sign in', icon: PrimeIcons.SIGN_IN, disabled: true },
+        { label: 'Sign up', icon: PrimeIcons.USER_PLUS, disabled: true },
+        { label: 'Sign out', icon: PrimeIcons.SIGN_OUT, disabled: true },
+      ],
     },
   ];
 
