@@ -6,8 +6,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './no-data.component.html',
-  styleUrls: ['./no-data.component.scss']
+  styleUrls: ['./no-data.component.scss'],
 })
-export class NoDataComponent {
-
-}
+export class NoDataComponent {}

@@ -78,7 +78,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     private cdr: ChangeDetectorRef,
     private dialogService: DialogService,
-    private boardMngmtService: BoardMngmtService
+    private boardMngmtService: BoardMngmtService,
   ) {}
 
   ngOnInit(): void {
@@ -90,12 +90,12 @@ export class NavbarComponent implements OnInit {
             id: b.id,
             label: b.title,
             command: () => this.boardMngmtService.setActiveBoard(b),
-          }))
+          })),
         ),
         tap(
           (boards) =>
-            (this.menuItems[0].items = boards as unknown as MenuItem[])
-        )
+            (this.menuItems[0].items = boards as unknown as MenuItem[]),
+        ),
       )
       .subscribe();
 

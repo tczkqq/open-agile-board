@@ -11,7 +11,7 @@ export class ColorSchemeService {
 
   switchTheme(theme: Theme) {
     const themeLink = this.document.getElementById(
-      'app-theme'
+      'app-theme',
     ) as HTMLLinkElement;
 
     if (themeLink) {

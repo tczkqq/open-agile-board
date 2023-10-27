@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private colorSchemeService: ColorSchemeService,
-    public boardMngmtService: BoardMngmtService
+    public boardMngmtService: BoardMngmtService,
   ) {}
 
   ngOnInit(): void {
