@@ -1,40 +1,40 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
-  FormControl,
   FormGroup,
-  ReactiveFormsModule,
+  FormControl,
   Validators,
+  ReactiveFormsModule,
 } from '@angular/forms';
 
-import { InputTextareaModule } from 'primeng/inputtextarea';
-import { ColorPickerModule } from 'primeng/colorpicker';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { EditorModule } from 'primeng/editor';
 
-import { ITag } from '@models/tag.model';
+import { ICard } from '@models/card.model';
 
 @Component({
-  selector: 'app-add-edit-tag',
+  selector: 'app-add-edit-card',
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    InputTextareaModule,
-    ColorPickerModule,
     InputTextModule,
     CommonModule,
     ButtonModule,
+    EditorModule,
   ],
-  templateUrl: './add-edit-tag.component.html',
-  styleUrls: ['./add-edit-tag.component.scss'],
+  templateUrl: './add-edit-card.component.html',
+  styleUrls: ['./add-edit-card.component.scss'],
 })
-export class AddEditTagComponent {
-  editedItem!: ITag;
+export class AddEditCardComponent {
+  editedItem!: ICard;
 
   form = new FormGroup({
-    name: new FormControl('', [Validators.required]),
+    title: new FormControl('', Validators.required),
     description: new FormControl(''),
-    color: new FormControl('#FFFFFF', [Validators.required]),
+    dateAdded: new FormControl(''),
+    dateUpdated: new FormControl(''),
+    tags: new FormControl(''),
   });
 
   onSubmit() {

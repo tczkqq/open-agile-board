@@ -1,0 +1,16 @@
+<form [formGroup]="form" class="tag-form">
+  <div class="field">
+    <label for="title">Title</label>
+    <input type="text" pInputText inputId="title" formControlName="title" />
+  </div>
+
+  <div class="field">
+    <label for="description">Description</label>
+    <p-editor formControlName="description" [style]="{ height: '320px' }" />
+  </div>
+
+  <div class="actions">
+    <p-button type="button" label="Reset" severity="secondary" />
+    <p-button type="button" label="Save" severity="success" />
+  </div>
+</form>

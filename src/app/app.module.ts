@@ -3,6 +3,8 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { AddEditBoardComponent } from '@components/boards/add-edit-board/add-edit-board.component';
+import { AddEditCardComponent } from '@components/cards/add-edit-card/add-edit-card.component';
+import { AddEditListComponent } from '@components/lists/add-edit-list/add-edit-list.component';
 import { AddEditTagComponent } from '@components/tags/add-edit-tag/add-edit-tag.component';
 import { CardDetailComponent } from '@components/cards/card-detail/card-detail.component';
 import { BrowseTagsComponent } from '@components/tags/browse-tags/browse-tags.component';
@@ -20,6 +22,8 @@ import { AppComponent } from './app.component';
   imports: [
     RouterModule.forRoot([]),
     AddEditBoardComponent,
+    AddEditCardComponent,
+    AddEditListComponent,
     AddEditTagComponent,
     BrowseTagsComponent,
     CardDetailComponent,

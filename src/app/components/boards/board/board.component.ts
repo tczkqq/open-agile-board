@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { EditorModule } from 'primeng/editor';
 import { ButtonModule } from 'primeng/button';
 
 import { LoadingComponent } from '@components/ui/loading/loading.component';
@@ -15,12 +16,13 @@ import { IBoard } from '@models/board.model';
   styleUrls: ['./board.component.scss'],
   standalone: true,
   imports: [
-    ButtonModule,
-    CardComponent,
-    ListComponent,
     LoadingComponent,
     NoDataComponent,
+    CardComponent,
+    ListComponent,
+    ButtonModule,
     CommonModule,
+    EditorModule,
   ],
 })
 export class BoardComponent {

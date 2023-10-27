@@ -14,6 +14,8 @@ import { BoardMngmtService } from '@services/board-mngmt.service';
 import { AddEditBoardComponent } from '@components/boards/add-edit-board/add-edit-board.component';
 import { AddEditTagComponent } from '@components/tags/add-edit-tag/add-edit-tag.component';
 import { BrowseTagsComponent } from '@components/tags/browse-tags/browse-tags.component';
+import { AddEditCardComponent } from '@components/cards/add-edit-card/add-edit-card.component';
+import { AddEditListComponent } from '@components/lists/add-edit-list/add-edit-list.component';
 
 @Component({
   selector: 'app-navbar',
@@ -43,12 +45,24 @@ export class NavbarComponent implements OnInit {
     {
       label: 'Cards',
       icon: PrimeIcons.COMMENTS,
-      items: [{ label: 'New', icon: PrimeIcons.PLUS, disabled: true }],
+      items: [
+        {
+          label: 'New',
+          icon: PrimeIcons.PLUS,
+          command: () => this.openDialog(AddEditCardComponent, 'Add Card'),
+        },
+      ],
     },
     {
       label: 'Lists',
       icon: PrimeIcons.LIST,
-      items: [{ label: 'New', icon: PrimeIcons.PLUS, disabled: true }],
+      items: [
+        {
+          label: 'New',
+          icon: PrimeIcons.PLUS,
+          command: () => this.openDialog(AddEditListComponent, 'Add List'),
+        },
+      ],
     },
     {
       label: 'Tags',

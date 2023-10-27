@@ -1,40 +1,37 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
-  FormControl,
   FormGroup,
-  ReactiveFormsModule,
+  FormControl,
   Validators,
+  ReactiveFormsModule,
 } from '@angular/forms';
 
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import { ColorPickerModule } from 'primeng/colorpicker';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 
-import { ITag } from '@models/tag.model';
+import { IList } from '@models/list.model';
 
 @Component({
-  selector: 'app-add-edit-tag',
+  selector: 'app-add-edit-list',
   standalone: true,
   imports: [
-    ReactiveFormsModule,
     InputTextareaModule,
-    ColorPickerModule,
+    ReactiveFormsModule,
     InputTextModule,
     CommonModule,
     ButtonModule,
   ],
-  templateUrl: './add-edit-tag.component.html',
-  styleUrls: ['./add-edit-tag.component.scss'],
+  templateUrl: './add-edit-list.component.html',
+  styleUrls: ['./add-edit-list.component.scss'],
 })
-export class AddEditTagComponent {
-  editedItem!: ITag;
+export class AddEditListComponent {
+  editedItem!: IList;
 
   form = new FormGroup({
-    name: new FormControl('', [Validators.required]),
+    title: new FormControl('', Validators.required),
     description: new FormControl(''),
-    color: new FormControl('#FFFFFF', [Validators.required]),
   });
 
   onSubmit() {
