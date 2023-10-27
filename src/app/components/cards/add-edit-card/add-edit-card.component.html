@@ -1,12 +1,22 @@
-<form [formGroup]="form" class="tag-form">
+<form [formGroup]="form" class="card-form">
   <div class="field">
     <label for="title">Title</label>
-    <input type="text" pInputText inputId="title" formControlName="title" />
+    <input
+      type="text"
+      pInputText
+      inputId="title"
+      formControlName="title"
+      placeholder="Title"
+    />
   </div>
 
   <div class="field">
     <label for="description">Description</label>
-    <p-editor formControlName="description" [style]="{ height: '320px' }" />
+    <p-editor
+      formControlName="description"
+      [style]="{ height: '320px' }"
+      placeholder="Description"
+    />
   </div>
 
   <div class="actions">

@@ -51,7 +51,6 @@
                 "jasmine/no-focused-tests": "error",
                 "jasmine/valid-expect": "error",
                 "jasmine/missing-expect": "error",
-                "no-console": "error",
                 "valid-typeof": "error"
             }
         },

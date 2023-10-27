@@ -39,6 +39,6 @@ export class AddEditBoardComponent {
   }
 
   onReset() {
-    // TODO: Reset form
+    this.form.reset();
   }
 }

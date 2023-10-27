@@ -1,0 +1,82 @@
+<form [formGroup]="form" class="login-form">
+  <div class="field">
+    <label for="email">Email</label>
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon">
+        <i class="pi pi-user"></i>
+      </span>
+      <input
+        type="text"
+        pInputText
+        inputId="email"
+        formControlName="email"
+        placeholder="Email"
+      />
+    </div>
+    <small
+      *ngIf="
+        form.get('email')?.touched && form.get('email')?.hasError('required')
+      "
+      severity="error"
+      class="p-error"
+      >Email is required.</small
+    >
+    <small
+      *ngIf="form.get('email')?.touched && form.get('email')?.hasError('email')"
+      severity="error"
+      class="p-error"
+      >Not a valid email.</small
+    >
+  </div>
+
+  <div class="field">
+    <label for="password">Password</label>
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon">
+        <i class="pi pi-lock"></i>
+      </span>
+      <input
+        type="password"
+        pPassword
+        inputId="password"
+        formControlName="password"
+        placeholder="Password"
+      />
+    </div>
+    <small
+      *ngIf="
+        form.get('password')?.touched &&
+        form.get('password')?.hasError('required')
+      "
+      severity="error"
+      class="p-error"
+      >Password is required.</small
+    >
+    <small
+      *ngIf="
+        form.get('password')?.touched &&
+        form.get('password')?.hasError('pattern')
+      "
+      severity="error"
+      class="p-error"
+      >Password has to have minimum eight characters, at least one upper case
+      letter, one lower case letter, one number and one special
+      character.</small
+    >
+  </div>
+  <div class="actions">
+    <p-button
+      type="button"
+      label="Reset"
+      severity="secondary"
+      (onClick)="onReset()"
+    />
+    <p-button
+      type="button"
+      label="Login"
+      severity="success"
+      [disabled]="!form.valid"
+      (onClick)="onSubmit()"
+    />
+  </div>
+</form>

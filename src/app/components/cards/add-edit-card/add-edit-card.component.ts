@@ -42,6 +42,6 @@ export class AddEditCardComponent {
   }
 
   onReset() {
-    // TODO: Reset form
+    this.form.reset();
   }
 }

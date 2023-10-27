@@ -39,6 +39,6 @@ export class AddEditListComponent {
   }
 
   onReset() {
-    // TODO: Reset form
+    this.form.reset();
   }
 }

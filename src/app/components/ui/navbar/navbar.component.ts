@@ -1,7 +1,11 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Component, OnInit, Type } from '@angular/core';
 
-import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import {
+  DialogService,
+  DynamicDialogConfig,
+  DynamicDialogRef,
+} from 'primeng/dynamicdialog';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { MenuItem, PrimeIcons } from 'primeng/api';
@@ -18,6 +22,8 @@ import { SearchBarComponent } from '@components/ui/search-bar/search-bar.compone
 import { SettingsComponent } from '@components/settings/settings.component';
 import { AboutComponent } from '@components/about/about.component';
 import { BoardMngmtService } from '@services/board-mngmt.service';
+import { LoginComponent } from '@components/auth/login/login.component';
+import { RegisterComponent } from '@components/auth/register/register.component';
 
 @Component({
   selector: 'app-navbar',
@@ -49,12 +55,14 @@ export class NavbarComponent implements OnInit {
         {
           label: 'New',
           icon: PrimeIcons.PLUS,
-          command: () => this.openDialog(AddEditBoardComponent, 'Add Board'),
+          command: () =>
+            this.openDialog(AddEditBoardComponent, { header: 'Add Board' }),
         },
         {
           label: 'Edit',
           icon: PrimeIcons.FILE_EDIT,
-          command: () => this.openDialog(AddEditBoardComponent, 'Edit Board'),
+          command: () =>
+            this.openDialog(AddEditBoardComponent, { header: 'Edit Board' }),
         },
       ],
     },
@@ -65,7 +73,8 @@ export class NavbarComponent implements OnInit {
         {
           label: 'New',
           icon: PrimeIcons.PLUS,
-          command: () => this.openDialog(AddEditCardComponent, 'Add Card'),
+          command: () =>
+            this.openDialog(AddEditCardComponent, { header: 'Add Card' }),
         },
       ],
     },
@@ -76,7 +85,8 @@ export class NavbarComponent implements OnInit {
         {
           label: 'New',
           icon: PrimeIcons.PLUS,
-          command: () => this.openDialog(AddEditListComponent, 'Add List'),
+          command: () =>
+            this.openDialog(AddEditListComponent, { header: 'Add List' }),
         },
       ],
     },
@@ -87,12 +97,14 @@ export class NavbarComponent implements OnInit {
         {
           label: 'New',
           icon: PrimeIcons.PLUS,
-          command: () => this.openDialog(AddEditTagComponent, 'Add Tag'),
+          command: () =>
+            this.openDialog(AddEditTagComponent, { header: 'Add Tag' }),
         },
         {
           label: 'Browse',
           icon: PrimeIcons.BOOK,
-          command: () => this.openDialog(BrowseTagsComponent, 'Browse Tags'),
+          command: () =>
+            this.openDialog(BrowseTagsComponent, { header: 'Browse Tags' }),
         },
       ],
     },
@@ -124,20 +136,40 @@ export class NavbarComponent implements OnInit {
     {
       label: 'Settings',
       icon: PrimeIcons.COG,
-      command: () => this.openDialog(SettingsComponent, 'Settings'),
+      command: () => this.openDialog(SettingsComponent, { header: 'Settings' }),
     },
     {
       label: 'About',
       icon: PrimeIcons.INFO_CIRCLE,
-      command: () => this.openDialog(AboutComponent, 'About'),
+      command: () => this.openDialog(AboutComponent, { header: 'About' }),
     },
     {
       label: 'Account',
       icon: PrimeIcons.USER,
       items: [
-        { label: 'Sign in', icon: PrimeIcons.SIGN_IN, disabled: true },
-        { label: 'Sign up', icon: PrimeIcons.USER_PLUS, disabled: true },
-        { label: 'Sign out', icon: PrimeIcons.SIGN_OUT, disabled: true },
+        {
+          label: 'Sign in',
+          icon: PrimeIcons.SIGN_IN,
+          command: () =>
+            this.openDialog(LoginComponent, {
+              header: 'Sign in',
+              width: '25em',
+            }),
+        },
+        {
+          label: 'Sign up',
+          icon: PrimeIcons.USER_PLUS,
+          command: () =>
+            this.openDialog(RegisterComponent, {
+              header: 'Sign up',
+              width: '25em',
+            }),
+        },
+        {
+          label: 'Sign out',
+          icon: PrimeIcons.SIGN_OUT,
+          command: () => this.onLogout(),
+        },
       ],
     },
   ];
@@ -169,7 +201,7 @@ export class NavbarComponent implements OnInit {
               label: 'New Board',
               icon: PrimeIcons.PLUS,
               command: () =>
-                this.openDialog(AddEditBoardComponent, 'Add Board'),
+                this.openDialog(AddEditBoardComponent, { header: 'Add Board' }),
             }),
         ),
       )
@@ -181,10 +213,9 @@ export class NavbarComponent implements OnInit {
       .subscribe();
   }
 
-  openDialog(component: Type<any>, header: string, data?: any): void {
-    this.ref = this.dialogService.open(component, {
-      header: header,
-      data: data,
-    });
+  openDialog(component: Type<any>, config: DynamicDialogConfig<any>): void {
+    this.ref = this.dialogService.open(component, config);
   }
+
+  onLogout(): void {}
 }

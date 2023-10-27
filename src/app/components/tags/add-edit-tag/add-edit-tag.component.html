@@ -1,7 +1,13 @@
 <form [formGroup]="form" class="tag-form">
   <div class="field">
     <label for="name">Name</label>
-    <input type="text" pInputText inputId="name" formControlName="name" />
+    <input
+      type="text"
+      pInputText
+      inputId="name"
+      formControlName="name"
+      placeholder="Name"
+    />
   </div>
 
   <div class="field">
@@ -15,6 +21,7 @@
       pInputTextarea
       rows="5"
       cols="30"
+      placeholder="Description"
       inputId="description"
       formControlName="description"
     >

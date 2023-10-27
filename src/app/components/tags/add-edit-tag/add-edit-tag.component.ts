@@ -42,6 +42,6 @@ export class AddEditTagComponent {
   }
 
   onReset() {
-    // TODO: Reset form
+    this.form.reset();
   }
 }
