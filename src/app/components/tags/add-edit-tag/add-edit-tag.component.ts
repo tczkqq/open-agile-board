@@ -34,7 +34,7 @@ export class AddEditTagComponent {
   form = new FormGroup({
     name: new FormControl('', [Validators.required]),
     description: new FormControl(''),
-    color: new FormControl('#FFFFFF', [Validators.required]),
+    color: new FormControl('#FFFFFF'),
   });
 
   onSubmit() {
@@ -43,5 +43,6 @@ export class AddEditTagComponent {
 
   onReset() {
     this.form.reset();
+    this.form.get('color')?.setValue('#FFFFFF');
   }
 }

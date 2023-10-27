@@ -19,14 +19,16 @@
       "
       severity="error"
       class="p-error"
-      >Email is required.</small
     >
+      Email is required.
+    </small>
     <small
       *ngIf="form.get('email')?.touched && form.get('email')?.hasError('email')"
       severity="error"
       class="p-error"
-      >Not a valid email.</small
     >
+      Not a valid email.
+    </small>
   </div>
 
   <div class="field">
@@ -50,8 +52,9 @@
       "
       severity="error"
       class="p-error"
-      >Password is required.</small
     >
+      Password is required.
+    </small>
     <small
       *ngIf="
         form.get('password')?.touched &&
@@ -59,10 +62,10 @@
       "
       severity="error"
       class="p-error"
-      >Password has to have minimum eight characters, at least one upper case
-      letter, one lower case letter, one number and one special
-      character.</small
     >
+      Password has to have minimum eight characters, at least one upper case
+      letter, one lower case letter, one number and one special character.
+    </small>
   </div>
   <div class="actions">
     <p-button

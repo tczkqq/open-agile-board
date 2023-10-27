@@ -8,11 +8,31 @@
       formControlName="name"
       placeholder="Name"
     />
+    <small
+      *ngIf="
+        form.get('name')?.touched && form.get('name')?.hasError('required')
+      "
+      severity="error"
+      class="p-error"
+      >Name is required.
+    </small>
   </div>
 
   <div class="field">
     <label for="color">Color</label>
-    <p-colorPicker formControlName="color" inputId="color" />
+    <div class="field-inline">
+      <p-colorPicker
+        formControlName="color"
+        inputId="color"
+        [ngModel]="form.get('color')?.value"
+      />
+      <input
+        type="text"
+        pInputText
+        formControlName="color"
+        [value]="form.get('color')?.value"
+      />
+    </div>
   </div>
 
   <div class="field">
@@ -29,7 +49,18 @@
   </div>
 
   <div class="actions">
-    <p-button type="button" label="Reset" severity="secondary" />
-    <p-button type="button" label="Save" severity="success" />
+    <p-button
+      type="button"
+      label="Reset"
+      severity="secondary"
+      (onClick)="onReset()"
+    />
+    <p-button
+      type="button"
+      label="Save"
+      severity="success"
+      [disabled]="!form.valid"
+      (onClick)="onSubmit()"
+    />
   </div>
 </form>

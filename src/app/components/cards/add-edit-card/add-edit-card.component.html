@@ -8,6 +8,15 @@
       formControlName="title"
       placeholder="Title"
     />
+    <small
+      *ngIf="
+        form.get('title')?.touched && form.get('title')?.hasError('required')
+      "
+      severity="error"
+      class="p-error"
+    >
+      Title is required.
+    </small>
   </div>
 
   <div class="field">
@@ -20,7 +29,18 @@
   </div>
 
   <div class="actions">
-    <p-button type="button" label="Reset" severity="secondary" />
-    <p-button type="button" label="Save" severity="success" />
+    <p-button
+      type="button"
+      label="Reset"
+      severity="secondary"
+      (onClick)="onReset()"
+    />
+    <p-button
+      type="button"
+      label="Save"
+      severity="success"
+      [disabled]="!form.valid"
+      (onClick)="onSubmit()"
+    />
   </div>
 </form>

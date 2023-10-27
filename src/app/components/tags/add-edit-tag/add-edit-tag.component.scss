@@ -10,6 +10,12 @@
         flex-direction: column;
     }
 
+    .field-inline {
+        display: inline-flex;
+        align-items: center;
+
+    }
+
     .actions {
         margin-top: 1em;
         display: flex;
