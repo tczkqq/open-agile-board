@@ -3,12 +3,11 @@
   <p>{{ board.description }}</p>
 
   <div class="lists">
-    <app-list
-      class="list"
-      *ngFor="let list of board.lists"
-      [list]="list"
-    />
+    <app-list class="list" *ngFor="let list of board.lists" [list]="list" />
   </div>
 
-  <app-no-data *ngIf="!board.lists" />
+  <app-no-data
+    *ngIf="board.lists.length === 0"
+    message="This board doesn't have any list. Add one from nav menu."
+  />
 </section>

@@ -1,0 +1,21 @@
+.card__title {
+    font-weight: bold;
+
+}
+
+.card__title__icon {
+    display: none;
+}
+.card__title:hover {
+    cursor: pointer;
+    text-decoration: underline;
+
+    .card__title__icon {
+        display: inlin;
+    }
+}
+
+.card__tags {
+    display: flex;
+    gap: 1em;
+}

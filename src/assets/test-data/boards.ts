@@ -14,7 +14,8 @@ export const BOARDS: IBoard[] = [
           {
             id: 1,
             title: 'Task 1',
-            descritpion: 'Task 1 description',
+            description:
+              'Task 1 description description description description description description description description description description description description description',
             dateAdded: 1,
             dateUpdated: 1,
             tags: [
@@ -24,12 +25,26 @@ export const BOARDS: IBoard[] = [
                 description: 'Tag 1 description',
                 color: 'red',
               },
+              {
+                id: 3,
+                name: 'Tag 3',
+                description: 'Tag 3 description',
+                color: 'orange',
+              },
+              {
+                id: 2,
+                name: 'Tag 2',
+                description:
+                  'Tag 2 description description description description description description description description description description description',
+                color: 'green',
+              },
             ],
           },
           {
             id: 4,
             title: 'Task 4',
-            descritpion: 'Task 4 description',
+            description:
+              'Task 4 description description description description description description description description description description description description description description description',
             dateAdded: 4,
             dateUpdated: 4,
             tags: [
@@ -51,7 +66,7 @@ export const BOARDS: IBoard[] = [
           {
             id: 3,
             title: 'Task 3',
-            descritpion: 'Task 3 description',
+            description: 'Task 3 description',
             dateAdded: 3,
             dateUpdated: 3,
             tags: [
@@ -70,7 +85,8 @@ export const BOARDS: IBoard[] = [
   {
     id: 2,
     title: 'Board 2',
-    description: 'Board 2 description',
+    description:
+      'Board 2 description description description description description description',
     lists: [
       {
         id: 2,
@@ -80,14 +96,16 @@ export const BOARDS: IBoard[] = [
           {
             id: 2,
             title: 'Task 2',
-            descritpion: 'Task 2 description',
+            description:
+              'Task 2 description description description description description description description description description description description description description',
             dateAdded: 2,
             dateUpdated: 2,
             tags: [
               {
                 id: 2,
                 name: 'Tag 2',
-                description: 'Tag 2 description',
+                description:
+                  'Tag 2 description description description description description description description description description description description',
                 color: 'red',
               },
             ],
@@ -95,5 +113,12 @@ export const BOARDS: IBoard[] = [
         ],
       },
     ],
+  },
+  {
+    id: 3,
+    title: 'Board 3',
+    description:
+      'Board 3 description description description description description',
+    lists: [],
   },
 ];
