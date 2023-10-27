@@ -11,6 +11,7 @@ import { BOARDS } from '@test-data/boards';
 export class BoardMngmtService {
   private data = new BehaviorSubject<IBoard[]>(BOARDS);
   private activeBoard = new BehaviorSubject<IBoard>(BOARDS[0]);
+  private dragDropActive = new BehaviorSubject<boolean>(true);
 
   addBoard(board: IBoard): void {
     const currentData = this.data.getValue();
@@ -48,5 +49,13 @@ export class BoardMngmtService {
 
   setActiveBoard(board: IBoard): void {
     this.activeBoard.next(board);
+  }
+
+  getDragDropActive(): Observable<boolean> {
+    return this.dragDropActive.asObservable();
+  }
+
+  setDragDropActive(value: boolean): void {
+    this.dragDropActive.next(value);
   }
 }

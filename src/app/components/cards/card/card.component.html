@@ -15,6 +15,10 @@
   </p>
 </div>
 
-<p-sidebar [(visible)]="sidebarVisible" position="right">
-  <app-card-detail [card]="card" />
+<p-sidebar
+  [(visible)]="sidebarVisible"
+  position="right"
+  [style]="{ width: '30em' }"
+>
+  <app-card-detail *ngIf="sidebarVisible" [card]="card" />
 </p-sidebar>

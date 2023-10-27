@@ -9,9 +9,13 @@
       [style]="{ color: tag.color }"
     />
   </p>
-  <p>{{ card.description }}</p>
+  <p-editor [ngModel]="card.description">
+    <p-header hidden />
+  </p-editor>
   <p class="action-butons">
     <p-button label="Edit" severity="warning" (onClick)="onEditClick()" />
     <p-button label="Delete" severity="danger" (onClick)="onDeleteClick()" />
   </p>
 </div>
+
+<p-confirmDialog [style]="{ width: '50vw' }" />

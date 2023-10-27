@@ -10,4 +10,18 @@
         justify-content: center;
         gap: 1em;
     }
+
+}
+:host ::ng-deep .ql-toolbar.ql-snow {
+    display: none;
+}
+
+:host ::ng-deep .p-editor-container .p-editor-content,
+:host ::ng-deep .ql-editor {
+    border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+}
+
+:host ::ng-deep .ql-container.ql-snow {
+    border-top: 1px !important;
 }

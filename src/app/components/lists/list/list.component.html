@@ -1,7 +1,7 @@
 <p-orderList
   [value]="list.tasks"
   [header]="list.title"
-  [dragdrop]="true"
+  [dragdrop]="(dragDropActive | async)!"
   [listStyle]="{ height: '100%' }"
 >
   <ng-template let-task pTemplate="item">

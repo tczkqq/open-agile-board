@@ -1,15 +1,15 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Component, OnInit, Type } from '@angular/core';
 
+import { InputTextModule } from 'primeng/inputtext';
+import { MenuItem, PrimeIcons } from 'primeng/api';
+import { MenubarModule } from 'primeng/menubar';
 import {
   DialogService,
   DynamicDialogConfig,
   DynamicDialogRef,
+  DynamicDialogModule,
 } from 'primeng/dynamicdialog';
-import { DynamicDialogModule } from 'primeng/dynamicdialog';
-import { InputTextModule } from 'primeng/inputtext';
-import { MenuItem, PrimeIcons } from 'primeng/api';
-import { MenubarModule } from 'primeng/menubar';
 
 import { map, tap } from 'rxjs/operators';
 
