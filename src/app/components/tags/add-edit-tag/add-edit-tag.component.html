@@ -1,0 +1,28 @@
+<form [formGroup]="form" class="tag-form">
+  <div class="field">
+    <label for="name">Name</label>
+    <input type="text" pInputText inputId="name" formControlName="name" />
+  </div>
+
+  <div class="field">
+    <label for="color">Color</label>
+    <p-colorPicker formControlName="color" inputId="color" />
+  </div>
+
+  <div class="field">
+    <label for="description">Description</label>
+    <textarea
+      pInputTextarea
+      rows="5"
+      cols="30"
+      inputId="description"
+      formControlName="description"
+    >
+    </textarea>
+  </div>
+
+  <div class="actions">
+    <p-button type="button" label="Reset" severity="secondary" />
+    <p-button type="button" label="Save" severity="success" />
+  </div>
+</form>

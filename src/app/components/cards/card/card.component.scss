@@ -1,21 +1,22 @@
-.card__title {
+.title {
     font-weight: bold;
 
 }
-
-.card__title__icon {
+.icon {
     display: none;
 }
-.card__title:hover {
+
+.title:hover {
     cursor: pointer;
     text-decoration: underline;
 
-    .card__title__icon {
-        display: inlin;
+    .icon {
+        padding-left: 0.2em;
+        display: inline;
     }
 }
 
-.card__tags {
+.tags {
     display: flex;
     gap: 1em;
 }

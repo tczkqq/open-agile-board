@@ -1,12 +1,12 @@
 <div class="card">
-  <p class="card__title" (click)="sidebarVisible = true">
-    {{ card.title }} <i class="pi pi-external-link card__title__icon"></i>
+  <p class="title" (click)="sidebarVisible = true">
+    {{ card.title }} <i class="pi pi-external-link icon"></i>
   </p>
   <p>
     {{ card.description | slice: 0 : 44
     }}{{ card.description.length > 44 ? "..." : null }}
   </p>
-  <p class="card__tags">
+  <p class="tags">
     <p-chip
       *ngFor="let tag of card.tags"
       [label]="tag.name"
